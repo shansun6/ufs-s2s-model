@@ -41,11 +41,11 @@ test cpld_fv3_384_mom6_cice_cold_bmark: fv3_mom6_cice.exe {
 
     # set locations of ICs
          BM_IC="/scratch1/NCEPDEV/nems/Bin.Li/S2S/FROM_HPSS/@[CDATE]"
- ##ssun FV3_IC="@[BM_IC]/gfs/C384/INPUT"
-       frac_IC="/scratch2/BMC/gsd-fv3-dev/sun/fv3_esrl_dec22/FV3GFSrun/FV3ICS_combined/@[CDATE]"
-        FV3_IC="@[frac_IC]/gfs/C384/INPUT"
+       frac_IC="/scratch2/BMC/gsd-fv3-dev/FV3ICS_frac/@[CDATE]"
+#nonfrac FV3_IC="@[BM_IC]/gfs/C384/INPUT"   # nonfrac ICs
+        FV3_IC="@[frac_IC]/gfs/C384/INPUT"  # frac ICs
        MOM6_IC="@[BM_IC]/mom6_da"
-      CICE5_IC="@[BM_IC]/cpc"    
+      CICE5_IC="@[BM_IC]/cpc"
 
     # Specify output files:
     criteria output {
