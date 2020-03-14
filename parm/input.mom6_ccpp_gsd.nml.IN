@@ -14,10 +14,12 @@
        fdiag = @[FDIAG]
        fhmax = @[FHMAX]
        fhmaxhf = @[NFHMAX_HF]
+       ccpp_suite = '@[SUITE_NAME]'
 /
 
 &diag_manager_nml
        prepend_date = .F.
+       max_output_fields =    450
 /
 
 &fms_io_nml
@@ -66,7 +68,7 @@
        p_fac = 0.1
        k_split  = 2
        n_split  = 6
-       nwat = 2
+       nwat = @[NWAT]
        na_init = @[NA_INIT]
        d_ext = 0.0
        dnats = 0
@@ -86,10 +88,10 @@
        mountain = @[MOUNTAIN]
        ncep_ic = .F.
        d_con = 1.
-       hord_mt =  6
-       hord_vt =  6
-       hord_tm =  6
-       hord_dp =  6
+       hord_mt =  @[HORD_MT]
+       hord_vt =  @[HORD_VT] 
+       hord_tm =  @[HORD_TM]
+       hord_dp =  @[HORD_DP]
        hord_tr = 8
        adjust_dry_mass = .F.
        consv_te = 1.
@@ -133,8 +135,11 @@
        nst_anl        = .true.
        use_ufo        = .true.
        pre_rad        = .false.
-       ncld           = 1
-       imp_physics    = 99
+       ncld           = @[NCLD]
+       imp_physics    = @[IMP_PHYSICS]
+       ltaerosol      = @[LTAEROSOL]
+       lradar         = @[LRADAR]
+       ttendlim       = @[TTENDLIM]
        pdfcld         = .false.
        fhswr          = 3600.
        fhlwr          = 3600.
@@ -155,17 +160,20 @@
        hybedmf        = @[HYBEDMF]
        satmedmf       = @[SATMEDMF]
        lheatstrg      = @[LHEATSTRG]
+       do_mynnedmf    = @[DO_MYNNEDMF]
+       do_mynnsfclay = @[DO_MYNNSFCLAY]
        random_clds    = .true.
-       trans_trac     = .false.
+       trans_trac     = @[TRANS_TRAC]
        cnvcld         = .true.
        imfshalcnv     = @[IMFSHALCNV]
        imfdeepcnv     = @[IMFDEEPCNV]
-       isatmedmf      = @[ISATMEDMF]
+       isatmedmf      = 0
        cdmbgwd        = 3.5,0.25
        prslrd0        = 0.
        ivegsrc        = 1
        isot           = 1
-       lsm            = 1
+       lsm            = @[LSM]
+       lsoil_lsm      = @[LSOIL_LSM]
        iopt_dveg      = 2
        iopt_crs       = 1
        iopt_btr       = 1
@@ -178,7 +186,14 @@
        iopt_snf       = 4
        iopt_tbot      = 2
        iopt_stc       = 1
+       icloud_bl      = 1
+       bl_mynn_tkeadvect = .true.
+       bl_mynn_edmf      = 1
+       bl_mynn_edmf_mom  = 1
+       gwd_opt        = 1
        debug          = .false.
+       oz_phys        = @[OZ_PHYS]
+       oz_phys_2015   = @[OZ_PHYS_2015]
        h2o_phys       = @[H2O_PHYS]
        nstf_name      = @[NSTF_NAME]
        cplflx         = @[CPLFLX]
@@ -204,6 +219,58 @@
        iseed_ca       = 0
        isppt_deep     = .false.
 /
+
+&gfdl_cloud_microphysics_nml
+       sedi_transport = .true.
+       do_sedi_heat = .false.
+       rad_snow = .true.
+       rad_graupel = .true.
+       rad_rain = .true.
+       const_vi = .F.
+       const_vs = .F.
+       const_vg = .F.
+       const_vr = .F.
+       vi_max = 1.
+       vs_max = 2.
+       vg_max = 12.
+       vr_max = 12.
+       qi_lim = 1.
+       prog_ccn = .false.
+       do_qa = .true.
+       fast_sat_adj = .true.
+       tau_l2v = 300.
+       tau_l2v = 225.
+       tau_v2l = 150.
+       tau_g2v = 900.
+       rthresh = 10.e-6  ! This is a key parameter for cloud water
+       dw_land  = 0.16
+       dw_ocean = 0.10
+       ql_gen = 1.0e-3
+       ql_mlt = 1.0e-3
+       qi0_crt = 8.0E-5
+       qs0_crt = 1.0e-3
+       tau_i2s = 1000.
+       c_psaci = 0.05
+       c_pgacs = 0.01
+       rh_inc = 0.30
+       rh_inr = 0.30
+       rh_ins = 0.30
+       ccn_l = 300.
+       ccn_o = 100.
+       c_paut = 0.5
+       c_cracw = 0.8
+       use_ppm = .false.
+       use_ccn = .true.
+       mono_prof = .true.
+       z_slope_liq  = .true.
+       z_slope_ice  = .true.
+       de_ice = .false.
+       fix_negative = .true.
+       icloud_f = 1
+       mp_time = 150.
+/
+
+
 
 &interpolator_nml
        interp_method = 'conserve_great_circle'
