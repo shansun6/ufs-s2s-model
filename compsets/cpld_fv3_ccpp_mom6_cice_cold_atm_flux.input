@@ -80,6 +80,10 @@ test cpld_fv3_ccpp_mom6_cice_cold_atm_flux: fv3_ccpp_mom6_cice.exe {
 # ICs
             'INPUT/sfc_data*.nc'  <=copyfrom= "@[FV3_IC]"
             'INPUT/gfs_data*.nc'  <=copyfrom= "@[FV3_IC]"
+            'INPUT/dust_data*.nc' <=copyfrom= "@[EMI_IC]"
+            'INPUT/emi_data*.nc'  <=copyfrom= "@[EMI_IC]"
+            'INPUT/emi2_data*.nc' <=copyfrom= "@[EMI_IC]"
+            'INPUT/FIRE_GBBEPx_data*.nc' <=copyfrom= "@[EMI_IC]"
                  'INPUT/MOM*.nc'  <=copyfrom= "@[MOM6_IC]"
             'cice5_model.res.nc'  <=copy=     "@[CICE5_IC]/cice5_model_0.25.res_@[CDATE].nc"
 # namelists,templates and configurations

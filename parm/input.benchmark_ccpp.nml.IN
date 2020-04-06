@@ -71,7 +71,7 @@
   p_fac = 0.1
   k_split = 2
   n_split = 6
-  nwat = 6
+  nwat = 28
   na_init = 1
   d_ext = 0.
   dnats = 1
