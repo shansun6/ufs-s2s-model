@@ -78,6 +78,7 @@ cpl_defaults = {
     NSOUT='-1'
     CPLFLX='.T.'
     CPL='.true.'
+    FRAC_GRID='.T.'
     NSTF_NAME='0,0,0,0,0'
     MOM6_RESTART_SETTING='n'
     med_model="nems"

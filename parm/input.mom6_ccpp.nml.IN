@@ -184,6 +184,7 @@
        nstf_name      = @[NSTF_NAME]
        cplflx         = @[CPLFLX]
        cplwav         = @[CPLWAV]
+       frac_grid      = @[FRAC_GRID]
        iau_delthrs    = 6
        iaufhrs        = 30
        iau_inc_files  = @[IAU_INC_FILES]
