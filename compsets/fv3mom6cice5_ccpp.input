@@ -141,6 +141,21 @@ cpl_defaults = {
     NGGPS_IC='.T.'
     MOUNTAIN='.F.'
 }
+
+ccpp_defaults = {
+# following 3 lines for GFS
+#    SUITE_NAME='FV3_GFS_2017_coupled'
+#    INPUT_CCPP_NML='input.mom6_ccpp.nml.IN'
+#    FIELD_CCPP_TABLE='field_table'
+
+# following 5 lines for GSD
+    SUITE_NAME='FV3_GSD_noah'
+    INPUT_CCPP_NML='input.mom6_ccpp_gsd.nml.IN'
+    FIELD_CCPP_TABLE='field_table_gsd'
+    DIAG_TABLE_TEMPLATE='diag_table_template_gsd'
+    use fv3_gsd
+}
+
 ########################################################################
 # embeded bash script to create input files at prerun from specification 
 # in compset
@@ -559,6 +574,7 @@ test cpld_fv3_ccpp_mom6_cice_6h_debug: fv3_ccpp_mom6_cice_debug.exe {
 # cold c384
  
 test cpld_fv3_ccpp_384_mom6_cice_cold_atm_flux: fv3_ccpp_mom6_cice.exe { 
+    use ccpp_defaults
     use cpld_fv3_ccpp_mom6_cice_cold_atm_flux
 
     ATMRES='384'
@@ -581,6 +597,7 @@ test cpld_fv3_ccpp_384_mom6_cice_cold_atm_flux: fv3_ccpp_mom6_cice.exe {
 # warm 2d c384
  
 test cpld_fv3_ccpp_384_mom6_cice_2d_atm_flux: fv3_ccpp_mom6_cice.exe { 
+    use ccpp_defaults
     use cpld_fv3_ccpp_mom6_cice_2d_atm_flux 
  
     ATMRES='384'
