@@ -95,7 +95,7 @@ test cpld_fv3_ccpp_mom6_cice_2d_atm_flux: fv3_ccpp_mom6_cice.exe {
                     'data_table'  <=copy=     "@[PARMnems]/data_table"
                 "nems.configure"  <=atparse=  "@[PARMnems]/nems.configure.@[nems_configure].IN"
             "suite_@[SUITE_NAME].xml"  <=copyfrom=     "@[PARMnems]/../FV3/ccpp/suites"
-              'CCN_ACTIVATE.BIN'  <=copy=     "@[PARMnems]/CCN_ACTIVATE.BIN"
+              'CCN_ACTIVATE.BIN'  <=copy=     "@[FV3_input_data]/CCN_ACTIVATE.BIN"
     } 
  
     # Edit the templates for the compset parameters
