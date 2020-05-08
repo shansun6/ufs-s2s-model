@@ -4,6 +4,7 @@ test cpld_fv3_ccpp_mom6_cice_2d_atm_flux: fv3_ccpp_mom6_cice.exe {
     use plat%default_cpl
     use fv3_defaults 
     use cpl_defaults 
+    use ccpp_defaults 
  
     TEST_DESCR="Fully coupled FV3-CCPP-MOM6-CICE system - 2d_warm" 
     CNTL_NAME="RT-Baselines_2d_warm_ccpp@[ATMRES]" 
@@ -94,6 +95,7 @@ test cpld_fv3_ccpp_mom6_cice_2d_atm_flux: fv3_ccpp_mom6_cice.exe {
                     'data_table'  <=copy=     "@[PARMnems]/data_table"
                 "nems.configure"  <=atparse=  "@[PARMnems]/nems.configure.@[nems_configure].IN"
             "suite_@[SUITE_NAME].xml"  <=copyfrom=     "@[PARMnems]/../FV3/ccpp/suites"
+              'CCN_ACTIVATE.BIN'  <=copy=     "@[PARMnems]/CCN_ACTIVATE.BIN"
     } 
  
     # Edit the templates for the compset parameters
