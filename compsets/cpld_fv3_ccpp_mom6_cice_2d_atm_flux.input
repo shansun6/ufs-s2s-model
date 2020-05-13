@@ -91,7 +91,7 @@ test cpld_fv3_ccpp_mom6_cice_2d_atm_flux: fv3_ccpp_mom6_cice.exe {
                'model_configure'  <=atparse=  "@[PARMnems]/model_configure.IN"
                'ice_in_template'  <=copy=     "@[PARMnems]/ice_in_template"
       'INPUT/MOM_input_template'  <=copy=     "@[PARMnems]/MOM_input_template"
-           'diag_table_template'  <=copy=     "@[PARMnems]/diag_table_template"
+           'diag_table_template'  <=copy=     "@[FV3_input_data]/@[DIAG_TABLE_TEMPLATE]"
                     'data_table'  <=copy=     "@[PARMnems]/data_table"
                 "nems.configure"  <=atparse=  "@[PARMnems]/nems.configure.@[nems_configure].IN"
             "suite_@[SUITE_NAME].xml"  <=copyfrom=     "@[PARMnems]/../FV3/ccpp/suites"
