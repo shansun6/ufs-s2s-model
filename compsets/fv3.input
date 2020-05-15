@@ -236,8 +236,8 @@ fv3_defaults = {
     NPY='97'
     NPZ='64'
     NPZP='65'
-    NFHOUT='3'
-    NFHMAX_HF='12'
+    NFHOUT='6'
+    NFHMAX_HF='6'
     NFHOUT_HF='1'
 
     QUILTING='.true.'
@@ -270,6 +270,33 @@ fv3_defaults = {
     CPLWAV='.F.'
     CPLWAV2ATM='.F.'
     CPL='.false.'
+}
+
+fv3_gsd = {
+    NWAT='6'
+    NCLD='5'
+    IMP_PHYSICS='8'
+    LTAEROSOL='.T.'
+    LRADAR='.T.'
+    TTENDLIM='0.001'
+    HYBEDMF='.F.'
+    DO_MYNNEDMF='.T.'
+    DO_MYNNSFCLAY='.F.'
+    TRANS_TRAC='.T.'
+    IMFSHALCNV='3'
+    IMFDEEPCNV='3'
+    LSM='1'
+    LSOIL_LSM='4'
+#    LSM='3'
+#    LSOIL_LSM='9'
+    HORD_MT='5'
+    HORD_VT='5'
+    HORD_TM='5'
+    HORD_DP='-5'
+    H2O_PHYS='.T.'
+    OZ_PHYS='.T.'
+    OZ_PHYS_2015='.F.'
+    DT_ATMOS="300"
 }
 
 ########################################################################
