@@ -28,8 +28,6 @@ platform hera.intel {
 
     ## BASELINE="/scratch1/NCEPDEV/nems/emc.nemspara/RT/FV3-MOM6-CICE5/develop-20200504"
     ## BASELINE_TEMPLATE="/scratch1/NCEPDEV/nems/emc.nemspara/RT/FV3-MOM6-CICE5/develop-20200504"
-    ## BASELINE="/scratch2/BMC/gsd-fv3-dev/FV3-MOM6-CICE5/EMC_20200326"
-    ## BASELINE_TEMPLATE="/scratch2/BMC/gsd-fv3-dev/FV3-MOM6-CICE5/EMC_20200326"
     BASELINE="/scratch2/BMC/gsd-fv3-dev/FV3-MOM6-CICE5/frac_20200504"
     BASELINE_TEMPLATE="/scratch2/BMC/gsd-fv3-dev/FV3-MOM6-CICE5/frac_20200504"
     INPUTS="@[BASELINE]"
