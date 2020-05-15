@@ -187,6 +187,8 @@
        cplflx         = @[CPLFLX]
        cplwav         = @[CPLWAV]
        cplwav2atm     = @[CPLWAV2ATM]
+       frac_grid      = @[FRAC_GRID]
+       frac_grid_off  = @[FRAC_GRID_OFF]
        iau_delthrs    = 6
        iaufhrs        = 30
        iau_inc_files  = @[IAU_INC_FILES]
