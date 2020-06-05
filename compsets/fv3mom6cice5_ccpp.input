@@ -112,6 +112,7 @@ cpl_defaults = {
     NSOUT='-1'
     CPLFLX='.T.'
     CPL='.true.'
+    FRAC_GRID='.T.'
     NSTF_NAME='0,0,0,0,0'
     MOM6_RESTART_SETTING='n'
     med_model="nems"
@@ -151,6 +152,22 @@ cpl_defaults = {
     NGGPS_IC='.T.'
     MOUNTAIN='.F.'
 }
+
+ccpp_defaults = {
+# following 4 lines for GFS
+    SUITE_NAME='FV3_GFS_2017_coupled'
+    INPUT_NML='input.mom6_ccpp.nml.IN'
+    FIELD_TABLE='field_table'
+    DIAG_TABLE_TEMPLATE='diag_table_template'
+
+# following 5 lines for GSD
+#   SUITE_NAME='FV3_GSD_noah_coupled'
+#   INPUT_NML='input.mom6_ccpp_gsd.nml.IN'
+#   FIELD_TABLE='field_table_gsd'
+#   DIAG_TABLE_TEMPLATE='diag_table_template_gsd'
+#   use fv3_gsd
+}
+
 ########################################################################
 # embeded bash script to create input files at prerun from specification 
 # in compset
@@ -241,6 +258,7 @@ load 'benchmarkWAV_ccpp_warm.input'
 
 test cpld_fv3_ccpp_mom6_cice_cold_atm_flux: fv3_ccpp_mom6_cice.exe { 
     use cpld_fv3_ccpp_mom6_cice_cold_atm_flux 
+    use ccpp_defaults
 
 } 
 ######################################################################## 
@@ -248,6 +266,7 @@ test cpld_fv3_ccpp_mom6_cice_cold_atm_flux: fv3_ccpp_mom6_cice.exe {
 
 test cpld_fv3_ccpp_mom6_cice_2d_atm_flux: fv3_ccpp_mom6_cice.exe { 
     use cpld_fv3_ccpp_mom6_cice_2d_atm_flux 
+    use ccpp_defaults
  
 }
 ######################################################################## 
@@ -574,6 +593,7 @@ test cpld_fv3_ccpp_mom6_cice_6h_debug: fv3_ccpp_mom6_cice_debug.exe {
  
 test cpld_fv3_ccpp_384_mom6_cice_cold_atm_flux: fv3_ccpp_mom6_cice.exe { 
     use cpld_fv3_ccpp_mom6_cice_cold_atm_flux
+    use ccpp_defaults
 
     ATMRES='384'
     TEST_DESCR="Fully coupled FV3-CCPP-MOM6-CICE system - cold 384"
@@ -596,6 +616,7 @@ test cpld_fv3_ccpp_384_mom6_cice_cold_atm_flux: fv3_ccpp_mom6_cice.exe {
  
 test cpld_fv3_ccpp_384_mom6_cice_2d_atm_flux: fv3_ccpp_mom6_cice.exe { 
     use cpld_fv3_ccpp_mom6_cice_2d_atm_flux 
+    use ccpp_defaults
  
     ATMRES='384'
     TEST_DESCR="Fully coupled FV3-CCPP-MOM6-CICE system - 2d_warm"
@@ -605,7 +626,6 @@ test cpld_fv3_ccpp_384_mom6_cice_2d_atm_flux: fv3_ccpp_mom6_cice.exe {
     NPY='385'
     IMO='1536'
     JMO='768'
-    walltime=5600   # seconds
     FNALBC="'global_snowfree_albedo.bosu.t766.1536.768.rg.grb',"
     FNVETC="'global_vegtype.igbp.t766.1536.768.rg.grb',"
     FNSOTC="'global_soiltype.statsgo.t766.1536.768.rg.grb',"
