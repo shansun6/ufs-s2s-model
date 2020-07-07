@@ -194,11 +194,16 @@ elif [[ $MACHINE_ID = hera.* ]]; then
   ECF_PORT=$(( $(id -u) + 1500 ))
   QUEUE=batch
 #  ACCNR=fv3-cpu
+# ACCNR=gsd-fv3-dev
+  ACCNR=gsd-hpcs
   PARTITION=
   dprefix=/scratch1/NCEPDEV
   DISKNM=$dprefix/nems/emc.nemspara/RT
   STMP=$dprefix/stmp4
   PTMP=$dprefix/stmp2
+  STMP=/scratch2/BMC/gsd-fv3-dev
+  PTMP=/scratch2/BMC/gsd-fv3-dev
+
 
   SCHEDULER=slurm
   cp fv3_conf/fv3_slurm.IN_hera fv3_conf/fv3_slurm.IN
@@ -379,6 +384,7 @@ if [[ $MACHINE_ID = cheyenne.* ]]; then
   RTPWD=${RTPWD:-$DISKNM/develop-20200210/${COMPILER^^}}
 else
   RTPWD=${RTPWD:-$DISKNM/FV3-MOM6-CICE5/develop-20200530}
+  RTPWD=/scratch2/BMC/gsd-fv3-dev/FV3-MOM6-CICE5/frac_20200504
 fi
 
 shift $((OPTIND-1))
