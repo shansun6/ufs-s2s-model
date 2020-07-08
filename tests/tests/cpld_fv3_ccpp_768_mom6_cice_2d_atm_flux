@@ -83,10 +83,10 @@ export LIST_FILES="phyf048.tile1.nc \
 export_fv3
 export_cpl
 
-export DAYS="2"
-export FHMAX="48"
-export FDIAG="6"
-export WLCLK=60
+export DAYS="35"
+export FHMAX="744"
+##export FDIAG="6"
+export WLCLK=360
 
 export DT_ATMOS="225"
 export NPX="769"
