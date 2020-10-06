@@ -1,7 +1,8 @@
 #
-#  S2S_control_c384 test
+#  S2S_restart test
 #
-export TEST_DESCR="Fully coupled FV3-CCPP-MOM6-CICE-CMEPS system - C384 MX025 "
+
+export TEST_DESCR="Fully coupled FV3-CCPP-MOM6-CICE-CMEPS system - C96MX100 - 12h restart"
 
 export CNTL_DIR="RT-Baselines_s2s_control_c384"
 export CNTLMED_DIR="RT-Baselines_s2s_control_c384"
@@ -51,9 +52,6 @@ export LIST_FILES="phyf024.tile1.nc \
                    RESTART/sfc_data.tile5.nc \
                    RESTART/sfc_data.tile6.nc \
                    RESTART/MOM.res.nc \
-                   RESTART/MOM.res_1.nc \
-                   RESTART/MOM.res_2.nc \
-                   RESTART/MOM.res_3.nc \
                    RESTART/iced.2016-10-04-00000.nc \
                    RESTART/ufs.s2s.cpl.r.2016-10-04-00000.nc"
 
@@ -61,6 +59,20 @@ export_fv3
 export_cpl
 
 export WLCLK=60
+
+export DAYS="0.50"
+export FHMAX="24"
+
+# ATM warm start
+FHROT='12'
+WARM_START='.T.'
+MAKE_NH='.F.'
+NA_INIT='0'
+EXTERNAL_IC='.F.'
+NGGPS_IC='.F.'
+MOUNTAIN='.T.'
+# 
+export FV3_RESTART_H=12
 
 export TASKS=$TASKS_cpl_c384
 export TPN=$TPN_cpl_c384
@@ -121,5 +133,16 @@ export FNABSC="'global_mxsnoalb.uariz.t766.1536.768.rg.grb',"
 export MOM6_RIVER_RUNOFF='True'
 export MOM6_REPRO_LA='False'
 export MOM6_THERMO_SPAN='False'
+
+# ICE warm start
+RUNTYPE='continue'
+export USE_RESTART_TIME='.true.'
+
+# MOM6 warm start
+export MOM6_RESTART_SETTING="r"
+
+# write a CICE restart at FHMAX
+export DUMPFREQ_N=${FV3_RESTART_H}
+export DUMPFREQ="h"
 
 export FV3_RUN=s2s_control_run.IN
