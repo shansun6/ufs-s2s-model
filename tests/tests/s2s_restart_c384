@@ -1,8 +1,8 @@
 #
-#  S2S_restart test
+#  S2S_restart_c384 test
 #
 
-export TEST_DESCR="Fully coupled FV3-CCPP-MOM6-CICE-CMEPS system - C96MX100 - 12h restart"
+export TEST_DESCR="Fully coupled FV3-CCPP-MOM6-CICE-CMEPS system - C384MX025 - 12h restart"
 
 export CNTL_DIR="RT-Baselines_s2s_control_c384"
 export CNTLMED_DIR="RT-Baselines_s2s_control_c384"
