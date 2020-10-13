@@ -104,9 +104,6 @@ export DT_ATMOS='900'
 export DT_CICE=${DT_ATMOS}
 export DT_DYNAM_MOM6='1800'
 export DT_THERM_MOM6='3600'
-
-# set component and coupling timesteps
-export DT_CICE=${DT_ATMOS}
 export CPL_SLOW=${DT_THERM_MOM6}
 export CPL_FAST=${DT_ATMOS}
 
@@ -129,8 +126,6 @@ export FNSMCC="'global_soilmgldas.t382.768.384.grb',"
 export FNABSC="'global_mxsnoalb.uariz.t382.768.384.rg.grb',"
 
 export MOM6_RIVER_RUNOFF='True'
-export MOM6_REPRO_LA='False'
-export MOM6_THERMO_SPAN='False'
 
 # ICE warm start
 RUNTYPE='continue'

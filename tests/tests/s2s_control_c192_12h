@@ -51,9 +51,6 @@ export LIST_FILES="phyf012.tile1.nc \
                    RESTART/sfc_data.tile5.nc \
                    RESTART/sfc_data.tile6.nc \
                    RESTART/MOM.res.nc \
-                   RESTART/MOM.res_1.nc \
-                   RESTART/MOM.res_2.nc \
-                   RESTART/MOM.res_3.nc \
                    RESTART/iced.2016-10-03-43200.nc \
                    RESTART/ufs.s2s.cpl.r.2016-10-03-43200.nc"
 
@@ -97,9 +94,6 @@ export DT_ATMOS='900'
 export DT_CICE=${DT_ATMOS}
 export DT_DYNAM_MOM6='1800'
 export DT_THERM_MOM6='3600'
-
-# set component and coupling timesteps
-export DT_CICE=${DT_ATMOS}
 export CPL_SLOW=${DT_THERM_MOM6}
 export CPL_FAST=${DT_ATMOS}
 
@@ -122,8 +116,6 @@ export FNSMCC="'global_soilmgldas.t382.768.384.grb',"
 export FNABSC="'global_mxsnoalb.uariz.t382.768.384.rg.grb',"
 
 export MOM6_RIVER_RUNOFF='True'
-export MOM6_REPRO_LA='False'
-export MOM6_THERMO_SPAN='False'
 
 #write a CICE restart at FHMAX
 export DUMPFREQ_N=${FHMAX}
