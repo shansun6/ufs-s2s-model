@@ -90,8 +90,6 @@ export NX_GLB=1440
 export NY_GLB=1080
 export NPROC_ICE='48'
 
-export FRAC_GRID_INPUT='.F.'
-
 # set component and coupling timesteps
 export DT_ATMOS='450'
 export DT_CICE=${DT_ATMOS}
@@ -103,6 +101,8 @@ export CPL_FAST=${DT_ATMOS}
 # nems.configure
 export coupling_interval_slow_sec=${CPL_SLOW}
 export coupling_interval_fast_sec=${CPL_FAST}
+
+export FRAC_GRID_INPUT='.F.'
 
 # resolution dependent files
 export MOM_INPUT="MOM_input_template_${OCNRES}"
@@ -119,6 +119,8 @@ export FNSMCC="'global_soilmgldas.statsgo.t766.1536.768.grb',"
 export FNABSC="'global_mxsnoalb.uariz.t766.1536.768.rg.grb',"
 
 export OZ_PHYS_NEW=".T."
+
+export FV3_RESTART_H=${FHMAX}
 
 export MOM6_RIVER_RUNOFF='True'
 export MOM6_RESTART_SETTING="r"
