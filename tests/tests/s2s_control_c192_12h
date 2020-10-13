@@ -117,8 +117,4 @@ export FNABSC="'global_mxsnoalb.uariz.t382.768.384.rg.grb',"
 
 export MOM6_RIVER_RUNOFF='True'
 
-#write a CICE restart at FHMAX
-export DUMPFREQ_N=${FHMAX}
-export DUMPFREQ="h"
-
 export FV3_RUN=s2s_control_run.IN

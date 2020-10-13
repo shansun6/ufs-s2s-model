@@ -107,8 +107,5 @@ export CHLCLIM="seawifs-clim-1997-2010.${NX_GLB}x${NY_GLB}.v20180328.nc"
 export FRUNOFF="runoff.daitren.clim.${NX_GLB}x${NY_GLB}.v20180328.nc"
 
 export MOM6_RIVER_RUNOFF='True'
-# write a CICE restart at FHMAX
-export DUMPFREQ_N=${FHMAX}
-export DUMPFREQ="h"
 
 export FV3_RUN=s2s_control_run.IN

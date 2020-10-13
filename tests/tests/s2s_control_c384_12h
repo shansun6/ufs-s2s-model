@@ -124,8 +124,4 @@ export MOM6_RIVER_RUNOFF='True'
 export MOM6_REPRO_LA='False'
 export MOM6_THERMO_SPAN='False'
 
-#write a CICE restart at FHMAX
-export DUMPFREQ_N=${FHMAX}
-export DUMPFREQ="h"
-
 export FV3_RUN=s2s_control_run.IN
