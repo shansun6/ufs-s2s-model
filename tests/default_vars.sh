@@ -312,8 +312,10 @@ export ice_petlist_bounds=$IPB_cpl_dflt
 # component and coupling timesteps
 export DT_ATMOS='900'
 export DT_CICE=${DT_ATMOS}
-export DT_DYNAM_MOM6='1800'
-export DT_THERM_MOM6='3600'
+#export DT_DYNAM_MOM6='1800'
+#export DT_THERM_MOM6='3600'
+export DT_DYNAM_MOM6=${DT_ATMOS}
+export DT_THERM_MOM6=${DT_ATMOS}
 export CPL_SLOW=${DT_THERM_MOM6}
 export CPL_FAST=${DT_ATMOS}
 
